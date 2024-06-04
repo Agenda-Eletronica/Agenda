@@ -1,0 +1,30 @@
+2 tables
+users id not null auto_increment nome  gmail senha
+
+compromisso id_compromisso Titulo_compromisso DateTime descrição_compromisso id_user (foreign key)
+ e data/hora
+
+
+Arrumar o "comfirmar" e a data pegando a atual independente de qual é selecionada.
+
+
+EVENTO
+Criar a herança com compromissos que requer convidados diante ao evento (Adicionar pelo email)
+Adicionar local no agendamento de Evento
+
+TAREFA 
+
+COMUM (titulo, data, horario, descrição)
+
+
+DISPARO DE EMAIL
+
+
+CLASSE CADASTRA  -> GerenciaUsuario (CRUD)
+CLASSE COMPROMISSO -> GerenciaCompromisso (CRUD)
+
+
+
+
+
+
