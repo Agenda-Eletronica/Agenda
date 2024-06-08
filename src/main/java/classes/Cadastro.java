@@ -14,20 +14,20 @@ import java.util.List;
 
 public class Cadastro {
 
-    List<Usuario> usuarios;
+    List<GerenciaUsuario> usuarios;
 
     public Cadastro(){
         this.usuarios = new ArrayList<>();
     }
-    public void AdicionarUsuario(Usuario usuario){
+    public void AdicionarUsuario(GerenciaUsuario usuario){
         this.usuarios.add(usuario);
     }
-    public List<Usuario> getUsuarios(){
+    public List<GerenciaUsuario> getUsuarios(){
         return usuarios;
     }
     
     public boolean usuarioExistente(String email){
-        for (Usuario usuario : usuarios) {
+        for (GerenciaUsuario usuario : usuarios) {
             if(usuario.getEmail().equals(email)){
                 return true;
             }

@@ -41,8 +41,8 @@ public class Login {
         return email;
     }
 
-    public static boolean autenticarMeu (Usuario usuario){
-        if(Usuario.validarEmail(usuario) && Usuario.validarSenha(usuario)){
+    public static boolean autenticarMeu (GerenciaUsuario usuario){
+        if(GerenciaUsuario.validarEmail(usuario) && GerenciaUsuario.validarSenha(usuario)){
             System.out.println("Autenticado com sucesso.");
             return true;
         }else{

@@ -8,14 +8,14 @@ public class Compromisso {
     private String titulo;
     private String descricao;
     private Date data;
-    private LocalTime horario;
+    private LocalTime horarioInicial;
     
 
     public Compromisso (String titulo, String descricao, Date data, LocalTime horario){
         this.titulo = titulo;
         this.descricao = descricao;
         this.data = data;
-        this.horario = horario;
+        this.horarioInicial = horario;
     }
     public void setTitulo(String titulo){
         this.titulo = titulo;
@@ -34,6 +34,6 @@ public class Compromisso {
         return ":::::" + this.titulo + ":::::\n"
         +"Descrição: " + this.descricao +"\n"
         +"Data: " + this.data + "\n"
-        +"Horario: " + this.horario +"\n";
+        +"Horario: " + this.horarioInicial +"\n";
     }
 }

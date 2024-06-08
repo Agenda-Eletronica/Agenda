@@ -8,7 +8,7 @@ package classes;
  *
  * @author gutav
  */
-public class Usuario {
+public class GerenciaUsuario {
     
     private String nome;
     private String email;
@@ -17,15 +17,15 @@ public class Usuario {
     private static final String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";// Modelo para autenticar se um email é válido.
     private static final String SENHA_PATTERN = "^(?=.*[A-Z])(?=.*\\d).{6,}$"; // Modelo para válidar se a senha é válida. Deve conter no minimo 6 digitos sento pelo menos 1 maiuscula e um numero. Não permite simbolos.
 
-    public Usuario() {
+    public GerenciaUsuario() {
     }
     
-    public Usuario(String nome, String email, String senha) {
+    public GerenciaUsuario(String nome, String email, String senha) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
     }
-    public Usuario( String email, String senha) {
+    public GerenciaUsuario( String email, String senha) {
         this.email = email;
         this.senha = senha;
     }
@@ -54,10 +54,10 @@ public class Usuario {
         this.senha = senha;
     }
     
-    public static boolean validarEmail(Usuario usuario){
+    public static boolean validarEmail(GerenciaUsuario usuario){
         return usuario.getEmail().matches(EMAIL_PATTERN);
     }
-    public static Boolean validarSenha(Usuario usuario){
+    public static Boolean validarSenha(GerenciaUsuario usuario){
         return usuario.getSenha().matches(SENHA_PATTERN);
     }
     public String toString() {
