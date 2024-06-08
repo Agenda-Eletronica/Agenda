@@ -6,7 +6,7 @@ package telas;
 
 import classes.Cadastro;
 import javax.swing.JOptionPane;
-import classes.Usuario;
+import classes.GerenciaUsuario;
 
 
 /**
@@ -166,8 +166,8 @@ public class telaCadastro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "As senhas não coincidem!", "Erro", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        Usuario usuario = new Usuario(nome, email, senha);
-        if(Usuario.validarEmail(usuario) && Usuario.validarSenha(usuario)){
+        GerenciaUsuario usuario = new GerenciaUsuario(nome, email, senha);
+        if(GerenciaUsuario.validarEmail(usuario) && GerenciaUsuario.validarSenha(usuario)){
             Cadastro cadastro = new Cadastro();
             cadastro.AdicionarUsuario(usuario);
             JOptionPane.showMessageDialog(this, "Sucesso", "Erro!!", JOptionPane.OK_OPTION);
