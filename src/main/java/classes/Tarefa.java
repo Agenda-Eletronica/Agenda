@@ -13,14 +13,44 @@ import java.util.Date;
  */
 public class Tarefa extends Compromisso {
     private String prioridade;
-    private Date DataFinal;
+    private Date dataFinal;
     private LocalTime horarioFinal;
     
     public Tarefa(String titulo, String descricao, Date data, LocalTime horarioInicial, Date dataFinal, LocalTime horarioFinal, String prioridade) {
         super(titulo, descricao, data, horarioInicial);
-        this.DataFinal = dataFinal;
+        this.dataFinal = dataFinal;
         this.horarioFinal = horarioFinal;
         this.prioridade = prioridade;
     }
-    
+
+    public Tarefa() {
+        //TODO Auto-generated constructor stub
+    }
+
+    public String toShortString() {
+        return String.format(
+            "Tarefa: %s | Descrição: %s | Início: %s %s | Fim: %s %s | Prioridade: %s",
+            getTitulo(),
+            getDescricao(),
+            getData(),
+            getHorario(),
+            dataFinal,
+            horarioFinal,
+            prioridade
+        );
+    }
+
+    public String toLongString() {
+        return String.format(
+            "Tarefa: %s\nDescrição: %s\nData Inicial: %s\nHora Inicial: %s\nData Final: %s\nHora Final: %s\nPrioridade: %s",
+            getTitulo(),
+            getDescricao(),
+            getData(),
+            getHorario(),
+            dataFinal,
+            horarioFinal,
+            prioridade
+        );
+    }
+
 }

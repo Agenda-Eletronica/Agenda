@@ -7,6 +7,7 @@ package telas;
 import classes.Compromisso;
 import classes.Evento;
 import java.text.ParseException;
+import telas.listarCompromissos;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -260,21 +261,30 @@ public class telaEvento extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // Capturando os dados dos campos de entrada
         String titulo = txtTitulo.getText();
         String descricao = txtDescricao.getText();
-        String horarioStr = choiceHora.getSelectedItem() +":"+ choiceMinuto.getSelectedItem();
+        String horarioStr = choiceHora.getSelectedItem() + ":" + choiceMinuto.getSelectedItem();
         Date dataInicial = (Date) this.dataInical.getValue();
         String local = localFild.getText();
 
-        
+        // Formatando a hora
         final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
-        
         LocalTime horario = LocalTime.parse(horarioStr, formatter);
-        
-        //Evento compromisso = new Evento(titulo, descricao, dataInicial, horario, local, );
-        
-        
+
+        // Capturando a lista de participantes
+        ArrayList<String> convidados = new ArrayList<>();
+        for (String convidado : list1.getItems()) {
+            convidados.add(convidado);
+        }
+
+        // Criando o objeto Evento
+        Evento evento = new Evento(titulo, descricao, dataInicial, horario, local, convidados);
+
+        // Para fins de depuração, vamos imprimir o evento
+        System.out.println(evento);
+
+        // Fechando a janela
         this.dispose();
 
     }//GEN-LAST:event_jButton1ActionPerformed

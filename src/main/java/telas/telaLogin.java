@@ -6,7 +6,7 @@ package telas;
 
 import javax.swing.JOptionPane;
 
-import classes.Login;
+import classes.GerenciaUsuario;
 
 
 /**
@@ -21,10 +21,6 @@ public class telaLogin extends javax.swing.JFrame {
     public telaLogin() {
         initComponents();
     }
-
-    public telaLogin(Login login) {
-		//TODO Auto-generated constructor stub
-	}
 
 	/**
      * This method is called from within the constructor to initialize the form.
@@ -149,6 +145,11 @@ public class telaLogin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    // metodo criado para settar os campos de Email e Senha como vazio em caso de erro.
+    private void setCampoVazio(){
+        textLogin.setText("");
+        textPassword.setText("");
+    }
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         // TODO add your handling code here:
@@ -158,13 +159,22 @@ public class telaLogin extends javax.swing.JFrame {
 
     private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
         // TODO add your handling code here:
-        if(textLogin.getText().equals("gustavohe2016@gmail.com") && new String(textPassword.getPassword()).equals("1234")){
+        String email = textLogin.getText();
+        String senha = new String(textPassword.getPassword());
+
+        GerenciaUsuario usuario = new GerenciaUsuario();
+
+        if(GerenciaUsuario.autenticar(getWarningString(), getName())){
             
         }else{
             JOptionPane.showMessageDialog(null, "Usuário ou senha invalidos");
+            setCampoVazio();
         }
+
+        //metodos para tornar a tela de Calendario visivel.
         new TelaCalendario().setVisible(true);
         this.dispose();
+
     }//GEN-LAST:event_jButtonLoginActionPerformed
 
     /**

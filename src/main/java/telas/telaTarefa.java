@@ -6,6 +6,7 @@ package telas;
 
 import classes.Compromisso;
 import classes.Tarefa;
+import telas.listarCompromissos;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
@@ -312,7 +313,9 @@ public class telaTarefa extends javax.swing.JFrame {
         LocalTime horarioInicial = LocalTime.parse(horarioInicialStr, formatter);
         LocalTime horarioFinal = LocalTime.parse(horarioFinalStr, formatter);
         
-        Compromisso compromisso = new Tarefa(titulo, descricao, dataInicial, horarioInicial, DataFinal, horarioFinal, prioridade);
+        Tarefa compromisso = new Tarefa(titulo, descricao, dataInicial, horarioInicial, DataFinal, horarioFinal, prioridade);
+        // adicionando compromissos a listarCompromissos
+       
         System.out.println(compromisso.toString());
         this.dispose();
 

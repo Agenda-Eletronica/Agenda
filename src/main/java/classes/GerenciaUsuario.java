@@ -54,11 +54,29 @@ public class GerenciaUsuario {
         this.senha = senha;
     }
     
-    public static boolean validarEmail(GerenciaUsuario usuario){
-        return usuario.getEmail().matches(EMAIL_PATTERN);
+    public static boolean validarEmail(String email){
+        return email.matches(EMAIL_PATTERN);
     }
-    public static Boolean validarSenha(GerenciaUsuario usuario){
-        return usuario.getSenha().matches(SENHA_PATTERN);
+    public static Boolean validarSenha(String senha){
+        return senha.matches(SENHA_PATTERN);
+    }
+    public static boolean usuarioExistente(String email){
+        // necessario implementação para consulta no banco de dados se esse usuário já existe
+        return true;
+    }
+    public static boolean cadastro(String nome, String email, String senha){
+        if(true){
+            // espaço para o código do Mysql para adição do usuário no banco de dados.
+            return true;
+        }
+        return false;
+    }
+    public static boolean autenticar(String email, String senha){
+        if(usuarioExistente(email)){
+            // necessário implementaçao com mySQL para autenticar usuário;
+            return true;
+        }
+        return false;
     }
     public String toString() {
         return "Nome: " + this.nome + "\n" +

@@ -10,7 +10,9 @@ public class Compromisso {
     private Date data;
     private LocalTime horarioInicial;
     
-
+    public Compromisso(){
+        
+    }
     public Compromisso (String titulo, String descricao, Date data, LocalTime horario){
         this.titulo = titulo;
         this.descricao = descricao;
@@ -28,6 +30,12 @@ public class Compromisso {
     }
     public String getDescricao(){
         return descricao;
+    }
+    public Date getData(){
+        return data;
+    }
+    public LocalTime getHorario(){
+        return horarioInicial;
     }
     
     public String toString(){

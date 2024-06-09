@@ -1,5 +1,4 @@
 telas\telaCadastro$1.class
-classes\Calendario.class
 telas\telaEvento$2.class
 telas\telaLogin$2.class
 telas\calendarPane.class
@@ -7,19 +6,15 @@ telas\telaEvento$4.class
 telas\telaTarefa$4.class
 classes\GerenciaUsuario.class
 telas\calendarPane$2.class
-telas\TelaCalendario$2.class
 telas\selectEventType$2.class
 Main.class
 telas\telaTarefa$1.class
 telas\calendarPane$1.class
 telas\selectEventType.class
 telas\telaTarefa$3.class
-classes\Login.class
 telas\telaCadastro$3.class
 telas\telaEvento$1.class
 telas\telaEvento$6.class
-classes\Cadastro.class
-classes\Agenda.class
 telas\telaLogin.class
 classes\Tarefa.class
 telas\telaTarefa.class
