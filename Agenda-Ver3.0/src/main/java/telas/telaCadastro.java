@@ -194,7 +194,7 @@ public class telaCadastro extends javax.swing.JFrame {
                 CriaCadastro.execute();
                 CriaCadastro.close();
                 
-                JOptionPane.showMessageDialog(this, "Sucesso!", "Cadastro confirmado!", JOptionPane.OK_OPTION);
+                JOptionPane.showMessageDialog(this, "Sucesso!", "Cadastro confirmado!", JOptionPane.INFORMATION_MESSAGE);
                 new telaLogin().setVisible(true);
                 this.dispose();
             }

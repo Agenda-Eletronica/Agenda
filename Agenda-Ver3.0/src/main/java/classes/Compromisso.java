@@ -1,54 +1,61 @@
 package classes;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 
-public class Compromisso {
+import java.time.LocalTime;
+import java.util.Date;
+
+public abstract class Compromisso {
+    private int id;
     private String titulo;
     private String descricao;
     private Date data;
-    private LocalTime horarioInicial;
-    
-    public Compromisso(){
-        
-    }
-    public Compromisso (String titulo, String descricao, Date data, LocalTime horario){
+    private LocalTime horario;
+
+    public Compromisso(String titulo, String descricao, Date data, LocalTime horario) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.data = data;
-        this.horarioInicial = horario;
+        this.horario = horario;
     }
-    public void setTitulo(String titulo){
-        this.titulo = titulo;
+
+    public int getId() {
+        return id;
     }
-    public void setDescricao(String descricao){
-        this.descricao = descricao;
+
+    public void setId(int id) {
+        this.id = id;
     }
-    public String getTitulo(){
+
+    public String getTitulo() {
         return titulo;
     }
-    public String getDescricao(){
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getDescricao() {
         return descricao;
     }
-    public Date getData(){
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public Date getData() {
         return data;
     }
-    public LocalTime getHorario(){
-        return horarioInicial;
-    }
+
     public void setData(Date data) {
         this.data = data;
     }
-    public void setHorarioInicial(LocalTime horarioInicial) {
-        this.horarioInicial = horarioInicial;
+
+    public LocalTime getHorario() {
+        return horario;
     }
-    
-    
-    public String toString(){
-        return ":::::" + this.titulo + ":::::\n"
-        +"Descrição: " + this.descricao +"\n"
-        +"Data: " + this.data + "\n"
-        +"Horario: " + this.horarioInicial +"\n";
+
+    public void setHorario(LocalTime horario) {
+        this.horario = horario;
     }
+
+    public abstract String toShortString();
 }

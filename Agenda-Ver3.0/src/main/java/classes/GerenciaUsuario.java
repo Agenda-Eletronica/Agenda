@@ -16,8 +16,7 @@ public class GerenciaUsuario {
     
     private static GerenciaUsuario instancia = null;
     private static final String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";// Modelo para autenticar se um email é válido.
-    private static final String SENHA_PATTERN = "^(?=.*[A-Z])(?=.*\\d).{6,}$"; // Modelo para válidar se a senha é válida. Deve conter no minimo 6 digitos sento pelo menos 1 maiuscula e um numero. Não permite simbolos.
-
+    
     private GerenciaUsuario() {
     }
 
@@ -73,9 +72,7 @@ public class GerenciaUsuario {
     public static boolean validarEmail(String email){
         return email.matches(EMAIL_PATTERN);
     }
-    public static Boolean validarSenha(String senha){
-        return senha.matches(SENHA_PATTERN);
-    }
+  
     public static boolean usuarioExistente(String email){
         // necessario implementação para consulta no banco de dados se esse usuário já existe
         return true;

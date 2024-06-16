@@ -1,70 +1,73 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package classes;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
-/**
- *
- * @author gutav
- */
 public class Tarefa extends Compromisso {
-    private String prioridade;
     private Date dataFinal;
+    private LocalTime horarioInicial;
     private LocalTime horarioFinal;
-    
+    private String prioridade;
+
     public Tarefa(String titulo, String descricao, Date data, LocalTime horarioInicial, Date dataFinal, LocalTime horarioFinal, String prioridade) {
         super(titulo, descricao, data, horarioInicial);
         this.dataFinal = dataFinal;
+        this.horarioInicial = horarioInicial;
         this.horarioFinal = horarioFinal;
         this.prioridade = prioridade;
     }
 
     public Tarefa() {
-        //TODO Auto-generated constructor stub
+        super("", "", null, null);
+        // Initialize with default values
+    }
+
+    public Date getDataFinal() {
+        return dataFinal;
+    }
+
+    public void setDataFinal(Date dataFinal) {
+        this.dataFinal = dataFinal;
+    }
+
+    public LocalTime getHorarioInicial() {
+        return horarioInicial;
+    }
+
+    public void setHorarioInicial(LocalTime horarioInicial) {
+        this.horarioInicial = horarioInicial;
+    }
+
+    public LocalTime getHorarioFinal() {
+        return horarioFinal;
+    }
+
+    public void setHorarioFinal(LocalTime horarioFinal) {
+        this.horarioFinal = horarioFinal;
     }
 
     public String getPrioridade() {
         return prioridade;
     }
-    @Override
-    public String getDescricao() {
-        // TODO Auto-generated method stub
-        return super.getDescricao();
-    }
-    @Override
-    public LocalTime getHorario() {
-        // TODO Auto-generated method stub
-        return super.getHorario();
-    }
 
-    public String toShortString() {
-        return String.format(
-            "Tarefa: %s | Descrição: %s | Início: %s %s | Fim: %s %s | Prioridade: %s",
-            getTitulo(),
-            getDescricao(),
-            getData(),
-            getHorario(),
-            dataFinal,
-            horarioFinal,
-            prioridade
-        );
+    public void setPrioridade(String prioridade) {
+        this.prioridade = prioridade;
     }
-
-    public String toLongString() {
-        return String.format(
-            "Tarefa: %s\nDescrição: %s\nData Inicial: %s\nHora Inicial: %s\nData Final: %s\nHora Final: %s\nPrioridade: %s",
-            getTitulo(),
-            getDescricao(),
-            getData(),
-            getHorario(),
-            dataFinal,
-            horarioFinal,
-            prioridade
-        );
-    }
-
+    
+   public String toShortString() {
+    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
+    return String.format(
+        "<html>Tarefa: %s<br>Descrição: %s<br>Início: %s %s<br>Fim: %s %s<br>Prioridade: %s</html>",
+        getTitulo(),
+        getDescricao(),
+        dateFormat.format(getData()), // Data formatada: dd/MM/yyyy
+        getHorario() != null ? getHorario().format(timeFormatter) : "N/A", // Hora formatada: HH:mm
+        dataFinal != null ? dateFormat.format(dataFinal) : "N/A", // Data final formatada
+        horarioFinal != null ? horarioFinal.format(timeFormatter) : "N/A", // Hora final formatada
+        prioridade
+    );
+}
 }
