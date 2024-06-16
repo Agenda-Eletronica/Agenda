@@ -13,6 +13,7 @@ import com.mysql.cj.x.protobuf.MysqlxPrepare.Prepare;
 
 import classes.GerenciaUsuario;
 import conexao.Conexao;
+import java.util.Date;
 
 public class listarCompromissos extends JFrame {
 
@@ -95,7 +96,7 @@ public class listarCompromissos extends JFrame {
         rb = new javax.swing.JButton();
         eb = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -162,6 +163,17 @@ public class listarCompromissos extends JFrame {
 
     private void ebActionPerformed(java.awt.event.ActionEvent evt) {
         //edita
+        int index = lc.getSelectedIndex();
+        if(index != -1){
+            String selecionado = lc.getModel().getElementAt(index);
+            
+            if(selecionado.charAt(0) == 'T'){
+                new telaTarefa(new Date()).setVisible(true);
+            }
+            if(selecionado.charAt(0) == 'E'){
+                new telaEvento(new Date()).setVisible(true);
+            }
+        }
 
     }
     private void rbActionPerformed(java.awt.event.ActionEvent evt) {

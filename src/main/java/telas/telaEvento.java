@@ -73,7 +73,7 @@ public class telaEvento extends javax.swing.JFrame {
         list1 = new java.awt.List();
         removerButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -101,7 +101,7 @@ public class telaEvento extends javax.swing.JFrame {
 
         jLabel5.setText("Minutos");
 
-        jLabel6.setText("Adição de compromisso");
+        jLabel6.setText("Adição Evento");
 
         jButton1.setText("Confirmar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -154,9 +154,6 @@ public class telaEvento extends javax.swing.JFrame {
                                         .addComponent(choiceMinuto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel5)))
                             .addComponent(jLabel8)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addComponent(jLabel6))
                             .addComponent(jLabel2)
                             .addComponent(jLabel7)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -172,15 +169,18 @@ public class telaEvento extends javax.swing.JFrame {
                                     .addComponent(removerButton)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(79, 79, 79)
-                        .addComponent(jButton1)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                        .addComponent(jButton1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addComponent(jLabel6)))
+                .addGap(19, 19, 19))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel6)
-                .addGap(10, 10, 10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(4, 4, 4)
                 .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -200,7 +200,7 @@ public class telaEvento extends javax.swing.JFrame {
                             .addComponent(choiceMinuto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(localFild, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel8)

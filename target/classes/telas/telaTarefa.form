@@ -60,28 +60,22 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                      <Component id="choicePrioridade" min="-2" pref="100" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="dataInicialFild" max="32767" attributes="0"/>
-                                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <Component id="dataInicialFild" pref="100" max="32767" attributes="0"/>
                           </Group>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="choiceHoraInicial" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                  <Component id="choiceMinutoInicial" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                              <Component id="choiceMinutoInicial" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
@@ -90,30 +84,26 @@
                           <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                           <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="choicePrioridade" alignment="0" pref="100" max="32767" attributes="0"/>
+                      <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtDescricao" min="-2" pref="200" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="dataFinalFild" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                               <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="dataFinalFild" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                               <Component id="choiceHoraFinal" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                  <Component id="choiceMinutoFinal" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                              <Component id="choiceMinutoFinal" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtDescricao" min="-2" pref="200" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="47" max="32767" attributes="0"/>
+                  <EmptySpace pref="48" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -127,53 +117,54 @@
                   <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                   <Component id="txtTitulo" min="-2" pref="26" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="dataInicialFild" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="1" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="choiceHoraInicial" min="-2" max="-2" attributes="0"/>
                               <Component id="choiceMinutoInicial" min="-2" max="-2" attributes="0"/>
+                              <Component id="choiceHoraInicial" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="dataFinalFild" min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                          <Component id="choicePrioridade" min="-2" pref="19" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txtDescricao" min="-2" pref="80" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jButton1" min="-2" pref="33" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="choiceMinutoFinal" min="-2" max="-2" attributes="0"/>
-                              <Component id="choiceHoraFinal" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="dataFinalFild" min="-2" pref="30" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="choiceHoraFinal" min="-2" max="-2" attributes="0"/>
+                              <Component id="choiceMinutoFinal" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
-                  <Component id="choicePrioridade" min="-2" pref="19" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txtDescricao" min="-2" pref="80" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" pref="33" max="-2" attributes="0"/>
-                  <EmptySpace pref="57" max="32767" attributes="0"/>
+                  <EmptySpace pref="47" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -279,6 +270,11 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="choiceHoraFinal.add(&quot;00&quot;);&#xa;choiceHoraFinal.add(&quot;01&quot;);&#xa;choiceHoraFinal.add(&quot;02&quot;);&#xa;choiceHoraFinal.add(&quot;03&quot;);&#xa;choiceHoraFinal.add(&quot;04&quot;);&#xa;choiceHoraFinal.add(&quot;05&quot;);&#xa;choiceHoraFinal.add(&quot;06&quot;);&#xa;choiceHoraFinal.add(&quot;07&quot;);&#xa;choiceHoraFinal.add(&quot;08&quot;);&#xa;choiceHoraFinal.add(&quot;09&quot;);&#xa;choiceHoraFinal.add(&quot;10&quot;);&#xa;choiceHoraFinal.add(&quot;11&quot;);&#xa;choiceHoraFinal.add(&quot;12&quot;);&#xa;choiceHoraFinal.add(&quot;13&quot;);&#xa;choiceHoraFinal.add(&quot;14&quot;);&#xa;choiceHoraFinal.add(&quot;15&quot;);&#xa;choiceHoraFinal.add(&quot;16&quot;);&#xa;choiceHoraFinal.add(&quot;17&quot;);&#xa;choiceHoraFinal.add(&quot;18&quot;);&#xa;choiceHoraFinal.add(&quot;19&quot;);&#xa;choiceHoraFinal.add(&quot;20&quot;);&#xa;choiceHoraFinal.add(&quot;21&quot;);&#xa;choiceHoraFinal.add(&quot;22&quot;);&#xa;choiceHoraFinal.add(&quot;23&quot;);"/>
           </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel10">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="sele&#xe7;&#xe3;o prioridade:"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

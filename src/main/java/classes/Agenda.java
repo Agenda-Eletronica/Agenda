@@ -20,13 +20,13 @@ public class Agenda {
         Cadastro cadastro = new Cadastro();
 
         // Inicializar Tela de Cadastro
-        telaCadastro telaCadastro = new telaCadastro(cadastro);
-        telaCadastro.setVisible(true);
+        //telaCadastro telaCadastro = new telaCadastro(cadastro);
+       // telaCadastro.setVisible(true);
 
         // Inicializar Login com o mesmo Cadastro
-        Login login = new Login(cadastro);
-        telaLogin telaLogin = new telaLogin(login);
-        telaLogin.setVisible(true);
+        //Login login = new Login(cadastro);
+        //telaLogin telaLogin = new telaLogin(login);
+        //telaLogin.setVisible(true);
         
     }
 
