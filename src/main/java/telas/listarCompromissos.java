@@ -169,15 +169,18 @@ public class listarCompromissos extends JFrame {
             
             if(selecionado.charAt(0) == 'T'){
                 new telaTarefa(new Date()).setVisible(true);
+                apagarIten();
+                dispose();
             }
             if(selecionado.charAt(0) == 'E'){
                 new telaEvento(new Date()).setVisible(true);
+                apagarIten();
+                dispose();
             }
         }
 
     }
-    private void rbActionPerformed(java.awt.event.ActionEvent evt) {
-        //apaga
+    private void apagarIten(){
         int index = lc.getSelectedIndex();
 
         if(index != -1){
@@ -217,6 +220,50 @@ public class listarCompromissos extends JFrame {
             
         }
 
+    }
+    private void rbActionPerformed(java.awt.event.ActionEvent evt) {
+        //apaga
+        apagarIten();
+        /* 
+        int index = lc.getSelectedIndex();
+
+        if(index != -1){
+            String selecionado = lc.getModel().getElementAt(index);
+            PreparedStatement removeSelecionado = null;
+    
+
+            if(selecionado.charAt(0) == 'T'){
+
+                try {
+                    String sql = "DELETE FROM compromisso_tarefa WHERE titulo_compromisso = ? AND id_usuario = ?";
+                    removeSelecionado = Conexao.getConexao().prepareStatement(sql);
+                    removeSelecionado.setString(1, tituloTarefa);
+                    removeSelecionado.setInt(2, gerenciausuario.getId());
+                    removeSelecionado.execute();
+                    adicionarItens();
+                    
+                } catch (SQLException ex) {
+                    System.out.println("Erro banco de dados apagar compromisso " + ex.getMessage());
+                }
+                
+            } else if(selecionado.charAt(0) == 'E'){
+                try {
+                    String sql = "DELETE FROM compromisso_evento WHERE titulo_compromisso = ? AND id_usuario = ?";
+                    removeSelecionado = Conexao.getConexao().prepareStatement(sql);
+                    removeSelecionado.setString(1, tituloEvento);
+                    removeSelecionado.setInt(2, gerenciausuario.getId());
+                    removeSelecionado.execute();
+                    adicionarItens();
+                    
+                } catch (SQLException ex) {
+                    System.out.println("Erro banco de dados apagar compromisso " + ex.getMessage());
+                }
+
+            }
+            
+            
+        }
+        */
 
     }
 

@@ -39,7 +39,7 @@ public class telaEvento extends javax.swing.JFrame {
         atualizarData();
     }
     public void atualizarData(){
-        SimpleDateFormat dataFormatada = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy");
         dataInical.setValue(selecDate);
         dataInical.setText(dataFormatada.format(selecDate));
     }
@@ -173,7 +173,7 @@ public class telaEvento extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(87, 87, 87)
                         .addComponent(jLabel6)))
-                .addGap(19, 19, 19))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,7 +255,7 @@ public class telaEvento extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

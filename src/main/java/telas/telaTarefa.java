@@ -17,6 +17,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -38,12 +39,19 @@ public class telaTarefa extends javax.swing.JFrame {
         initComponents();
         atualizarData();
     }
-    public void atualizarData(){
-        SimpleDateFormat dataFormatada = new SimpleDateFormat("dd-MM-yyyy");
-        dataInicialFild.setValue(selecDate);
-        dataInicialFild.setText(dataFormatada.format(selecDate));
-        dataFinalFild.setText(dataFormatada.format(selecDate));
-        dataFinalFild.setValue(selecDate);
+   public void atualizarData(){
+        /** atualizarData(), metodo responsavel por atualizar a data dentro da tela de criação de acordo com a data selecionada pelo usuário.
+         */
+
+        // Defina o formato de data desejado
+        SimpleDateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy");
+        String dataString = dataFormatada.format(selecDate);
+
+        //dataInicialFild.setValue(selecDate);
+        dataInicialFild.setText(dataString);
+
+        dataFinalFild.setText(dataString);
+        //dataFinalFild.setValue(selecDate);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -304,16 +312,25 @@ public class telaTarefa extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        /** Contem todas as funções relácionadas da coleta de informações da Gui apartir do click no botão Confirmar */
         GerenciaUsuario gerenciausuario = GerenciaUsuario.getInstancia();
         String titulo = txtTitulo.getText();
         String descricao = txtDescricao.getText();
         String horarioInicialStr = choiceHoraInicial.getSelectedItem() +":"+ choiceMinutoInicial.getSelectedItem();
         String horarioFinalStr = choiceHoraFinal.getSelectedItem() +":"+ choiceMinutoInicial.getSelectedItem();
-        Date dataInicial = selecDate;
-        Date DataFinal = (Date) dataFinalFild.getValue();
+        Date dataInicial = null;//selecDate;
+        Date DataFinal = null;//(Date) dataFinalFild.getValue();
         String prioridade = choicePrioridade.getSelectedItem();
         PreparedStatement criaTarefa = null;
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+        try {
+            DataFinal = sdf.parse(dataFinalFild.getText());
+            dataInicial = sdf.parse(dataInicialFild.getText());
+        } catch (ParseException e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        }
 
         String dataFormat = sdf.format(dataInicial);
         String dataFormatFinal = sdf.format(DataFinal);
@@ -325,7 +342,7 @@ public class telaTarefa extends javax.swing.JFrame {
         LocalTime horarioFinal = LocalTime.parse(horarioFinalStr, formatter);
 
 
-        
+        /** Ações responsaveis pela construção do objeto tarefa e sua inserção no banco de dados */
         Tarefa tarefa = new Tarefa(titulo, descricao, dataInicial, horarioInicial, DataFinal, horarioFinal, prioridade);
         System.out.println("HORA INICIAL" + horarioInicialStr);
         System.out.println("DATA INICIAL:" + dataFormat);
