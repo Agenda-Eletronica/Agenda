@@ -8,14 +8,16 @@ public class Compromisso {
     private String titulo;
     private String descricao;
     private Date data;
-    private LocalTime horario;
+    private LocalTime horarioInicial;
     
-
+    public Compromisso(){
+        
+    }
     public Compromisso (String titulo, String descricao, Date data, LocalTime horario){
         this.titulo = titulo;
         this.descricao = descricao;
         this.data = data;
-        this.horario = horario;
+        this.horarioInicial = horario;
     }
     public void setTitulo(String titulo){
         this.titulo = titulo;
@@ -29,11 +31,24 @@ public class Compromisso {
     public String getDescricao(){
         return descricao;
     }
+    public Date getData(){
+        return data;
+    }
+    public LocalTime getHorario(){
+        return horarioInicial;
+    }
+    public void setData(Date data) {
+        this.data = data;
+    }
+    public void setHorarioInicial(LocalTime horarioInicial) {
+        this.horarioInicial = horarioInicial;
+    }
+    
     
     public String toString(){
         return ":::::" + this.titulo + ":::::\n"
         +"Descrição: " + this.descricao +"\n"
         +"Data: " + this.data + "\n"
-        +"Horario: " + this.horario +"\n";
+        +"Horario: " + this.horarioInicial +"\n";
     }
 }

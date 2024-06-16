@@ -4,6 +4,11 @@
  */
 package telas;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import classes.GerenciaUsuario;
+
 /**
  *
  * @author gutav
@@ -26,34 +31,66 @@ public class TelaCalendario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        newJPanel1 = new telas.NewJPanel();
+        popupMenu2 = new java.awt.PopupMenu();
+        calendarPane1 = new telas.calendarPane();
+        jLabel1 = new javax.swing.JLabel();
+        listCompromissosButton = new javax.swing.JButton();
+
+        popupMenu2.setLabel("popupMenu2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
-        newJPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Marcar compromisso");
+
+        listCompromissosButton.setText("Listar Compromissos");
+        listCompromissosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listCompromissosButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(newJPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 718, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(calendarPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(197, 197, 197)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(194, 194, 194)
+                .addComponent(listCompromissosButton)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(153, Short.MAX_VALUE)
-                .addComponent(newJPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(30, 30, 30)
+                .addComponent(listCompromissosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addComponent(calendarPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void listCompromissosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listCompromissosButtonActionPerformed
+        new listarCompromissos().setVisible(true);
+    }//GEN-LAST:event_listCompromissosButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -87,6 +124,9 @@ public class TelaCalendario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private telas.NewJPanel newJPanel1;
+    private telas.calendarPane calendarPane1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton listCompromissosButton;
+    private java.awt.PopupMenu popupMenu2;
     // End of variables declaration//GEN-END:variables
 }

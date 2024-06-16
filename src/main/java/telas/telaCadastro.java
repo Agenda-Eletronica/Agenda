@@ -4,9 +4,14 @@
  */
 package telas;
 
-import classes.Cadastro;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 import javax.swing.JOptionPane;
-import classes.Usuario;
+import classes.GerenciaUsuario;
+import conexao.Conexao;
 
 
 /**
@@ -22,9 +27,7 @@ public class telaCadastro extends javax.swing.JFrame {
         initComponents();
     }
 
-    public telaCadastro(Cadastro cadastro) {
-        //TODO Auto-generated constructor stub
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -46,7 +49,7 @@ public class telaCadastro extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(480, 360));
@@ -155,27 +158,54 @@ public class telaCadastro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailActionPerformed
 
+    //Campo criado para setar o valor vazio quando ocorrer erro na criação do usuário.
+    private void setCampoVazio(){
+        txtNome.setText("");
+        txtEmail.setText("");
+        txtSenha.setText("");
+        txtRepetSenha.setText("");
+    }
+
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         // TODO add your handling code here:
         String nome = txtNome.getText();
         String email = txtEmail.getText();
         String senha = new String(txtSenha.getPassword());
         String senhaRepete = new String(txtRepetSenha.getPassword());
-        
-        if(!senha.equals(senhaRepete)){
-            JOptionPane.showMessageDialog(this, "As senhas não coincidem!", "Erro", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        Usuario usuario = new Usuario(nome, email, senha);
-        if(Usuario.validarEmail(usuario) && Usuario.validarSenha(usuario)){
-            Cadastro cadastro = new Cadastro();
-            cadastro.AdicionarUsuario(usuario);
-            JOptionPane.showMessageDialog(this, "Sucesso", "Erro!!", JOptionPane.OK_OPTION);
-            new telaLogin().setVisible(true);
-            this.dispose();
-        }else{
-            JOptionPane.showMessageDialog(this, "Email ou senha inválidos.", "Erro!!", JOptionPane.ERROR_MESSAGE);
-        }
+
+
+        PreparedStatement CriaCadastro = null;
+
+
+        try{
+
+
+
+            if(!senha.equals(senhaRepete)){
+                JOptionPane.showMessageDialog(this, "As senhas não coincidem!", "Erro", JOptionPane.ERROR_MESSAGE);
+                setCampoVazio();
+            } else{
+
+                String sql = "INSERT INTO usuarios (nome, gmail, senha) VALUES (?, ?, ?)";
+                CriaCadastro = Conexao.getConexao().prepareStatement(sql);
+                CriaCadastro.setString(1, nome);
+                CriaCadastro.setString(2, email);
+                CriaCadastro.setString(3, senha);
+                CriaCadastro.execute();
+                CriaCadastro.close();
+                
+                JOptionPane.showMessageDialog(this, "Sucesso!", "Cadastro confirmado!", JOptionPane.OK_OPTION);
+                new telaLogin().setVisible(true);
+                this.dispose();
+            }
+
+  
+            
+
+    
+            }catch (SQLException ex){
+                System.out.println("banco de dados nao foi conectado (tela cadastro) " + ex.getMessage());
+            }
     }//GEN-LAST:event_button1ActionPerformed
 
     /**

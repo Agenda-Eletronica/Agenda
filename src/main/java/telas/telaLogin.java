@@ -4,9 +4,16 @@
  */
 package telas;
 
-import javax.swing.JOptionPane;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
-import classes.Login;
+import javax.naming.spi.DirStateFactory.Result;
+import javax.sql.StatementEvent;
+import javax.swing.JOptionPane;
+import conexao.Conexao;
+import classes.GerenciaUsuario;
 
 
 /**
@@ -21,10 +28,6 @@ public class telaLogin extends javax.swing.JFrame {
     public telaLogin() {
         initComponents();
     }
-
-    public telaLogin(Login login) {
-		//TODO Auto-generated constructor stub
-	}
 
 	/**
      * This method is called from within the constructor to initialize the form.
@@ -149,6 +152,11 @@ public class telaLogin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    // metodo criado para settar os campos de Email e Senha como vazio em caso de erro.
+    private void setCampoVazio(){
+        textLogin.setText("");
+        textPassword.setText("");
+    }
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         // TODO add your handling code here:
@@ -158,13 +166,71 @@ public class telaLogin extends javax.swing.JFrame {
 
     private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
         // TODO add your handling code here:
-        if(textLogin.getText().equals("gustavohe2016@gmail.com") && new String(textPassword.getPassword()).equals("1234")){
-            
-        }else{
-            JOptionPane.showMessageDialog(null, "Usuário ou senha invalidos");
+        PreparedStatement VerificaLogin = null;
+        PreparedStatement pegaID = null;
+        String email = textLogin.getText();
+        String senha = new String(textPassword.getPassword());
+        GerenciaUsuario gerenciausuario = GerenciaUsuario.getInstancia();
+
+
+        try{
+            String sql = "SELECT COUNT(*) AS total FROM usuarios WHERE gmail LIKE BINARY ? AND senha LIKE BINARY ?";
+            VerificaLogin = Conexao.getConexao().prepareStatement(sql);
+            VerificaLogin.setString(1, email);
+            VerificaLogin.setString(2, senha);
+            ResultSet rs = VerificaLogin.executeQuery();
+
+
+            if (rs.next()) {
+                int contador = rs.getInt("total");
+                if(contador == 1){
+                    rs.close();
+                    VerificaLogin.close();
+                    try {
+                        String sqlId = "SELECT id FROM usuarios WHERE gmail LIKE BINARY ?";
+                        pegaID = Conexao.getConexao().prepareStatement(sqlId);
+                        pegaID.setString(1, email);
+                        ResultSet rsID = pegaID.executeQuery();
+                        if(rsID.next()){
+                            int id = rsID.getInt("id");
+                            gerenciausuario.setId(id);
+
+
+                        }
+                    } catch (SQLException ex) {
+                        System.out.println("Erro de conexao de banco de dados (tela login parte de get ID)" + ex.getMessage());
+                        // TODO: handle exception
+                    }
+
+
+                    gerenciausuario.setEmail(email);
+                    gerenciausuario.setSenha(senha);
+                    // String g = gerenciausuario.toString();
+
+                    // System.out.println("mostra no telalogin: "+  g);
+
+
+
+                    this.dispose();
+                    new TelaCalendario().setVisible(true);
+                } else{
+                    JOptionPane.showMessageDialog(null, "Usuário ou senha invalidos");
+                    setCampoVazio();
+                }
+            }
+
+
+
+        } catch (SQLException ex){
+            System.out.println("Erro de conexao de banco de dados (tela login)" + ex.getMessage());
         }
-        new TelaCalendario().setVisible(true);
-        this.dispose();
+
+
+
+        //metodos para tornar a tela de Calendario visivel.
+  
+
+
     }//GEN-LAST:event_jButtonLoginActionPerformed
 
     /**
